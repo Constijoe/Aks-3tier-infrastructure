@@ -1,0 +1,11 @@
+variable "aks_version" {}
+variable "env" {}
+variable "name" {}
+variable "client_id" {}
+variable "client_secret" {}
+variable "tenant_id" {}
+variable "subscriptiom_id" {}
+variable "resource_group_name" {}
+variable "location" {}
+variable "env" {}
+variable "principal_id" {}
