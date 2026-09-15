@@ -23,3 +23,7 @@ variable "virtual_network_name" {
   }
   variable "db_password" {
   }
+  variable "client_id" {}
+  variable "client_secret" {}
+  variable "tenant_id" {}
+  variable "subscription_id" {}

@@ -9,37 +9,37 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
     environment: production
+    env:
+      # Service principal credentials
+      TF_VAR_client_id: ${{ secrets.AZURE_CLIENT_ID }}
+      TF_VAR_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+      TF_VAR_tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+      TF_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+    # this tells teraform to use bash scrpt
     defaults:
       run:
         shell: bash
 
+    # Terraform  downloads the repository
     steps:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        client-secret: ${{secrets.AZURE_CLIENT_SECRET}}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
+    # installs terraform
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with: cli_config_credentials_token ${{secrets.API_TF_TOKEN}}
-    # - name: Terraform Init
-    #   run: terraform init
+    - name: Terraform Init
+      run: terraform init
 
-    # - name: Terraform Format Check
-    #   run: terraform fmt -check -recursive
+    - name: Terraform Format Check
+      run: terraform fmt -check -recursive
 
-    # - name: Terraform Plan
-    #   run: terraform plan
+    - name: Terraform Plan
+      run: terraform plan
+    - name: terraform apply
+      run: terraform apply -auto approve
 
-    # - name: terraform apply
-    #   run: terraform apply -auto approve
-
-    # - name: terraform Destroy
-    #   run: terraform destroy -auto approve
+    - name: terraform Destroy
+      run: terraform destroy -auto approve
