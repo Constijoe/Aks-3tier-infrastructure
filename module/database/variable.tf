@@ -9,10 +9,10 @@ variable "location" {
 }
 variable "db_username" {
 }
-variable "db_password" {  
+variable "db_password" {
 }
-variable "private_subnet_id" { 
+variable "private_subnet_id" {
 }
 variable "env" {
 }
-variable "resource_group_name"{}
+variable "resource_group_name" {}

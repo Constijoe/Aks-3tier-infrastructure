@@ -1,47 +1,47 @@
 resource "azurerm_network_security_group" "database" {
 
 
-name="database-nsg"
+  name = "database-nsg"
 
 
-location = var.location
+  location = var.location
 
 
-resource_group_name = var.resource_group_name
-
-
-
-security_rule {
-
-
-name="allow-backend"
-
-
-priority=100
-
-
-direction="Inbound"
-
-
-access="Allow"
-
-
-protocol="Tcp"
+  resource_group_name = var.resource_group_name
 
 
 
-source_port_range="*"
+  security_rule {
 
 
-destination_port_range="3360"
+    name = "allow-backend"
 
 
-source_address_prefix= "10.0.2.0/24"
+    priority = 100
 
 
-destination_address_prefix="*"
+    direction = "Inbound"
 
 
-}
+    access = "Allow"
+
+
+    protocol = "Tcp"
+
+
+
+    source_port_range = "*"
+
+
+    destination_port_range = "3360"
+
+
+    source_address_prefix = "10.0.2.0/24"
+
+
+    destination_address_prefix = "*"
+
+
+  }
 
 }
