@@ -34,10 +34,10 @@ module "aks" {
   source              = "./module/aks"
   resource_group_name = module.resource_group.resource_group_name
   location            = module.resource_group.resource_group_location
-  name = var.name
-  env = var.env
-  aks_version =  "1.33"
-  vnet_id = module.network.vnet_id
+  name                = var.name
+  env                 = var.env
+  aks_version         = "1.33"
+  vnet_id             = module.network.vnet_id
 
 
 }
