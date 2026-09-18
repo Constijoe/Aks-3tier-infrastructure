@@ -5,7 +5,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   dns_prefix                = "exampleaks1"
   kubernetes_version        = var.aks_version
   private_cluster_enabled   = false
-  node_resource_group       ="PCIDSS-bank-AKS-nodes"
+  node_resource_group       = "PCIDSS-bank-AKS-nodes"
   sku_tier                  = "Free"
   oidc_issuer_enabled       = true
   workload_identity_enabled = true
