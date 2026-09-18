@@ -11,19 +11,31 @@ variable "virtual_network_name" {
   type = string
 }
 variable "address_space" {
-  type = set(string)
+  type = string
 }
 variable "public_subnet_cidr" {
-  type = set(string)
+  type = string
 }
 variable "private_subnet_cidr" {
-  type = set(string)
+  type = string
 }
 variable "db_username" {
 }
 variable "db_password" {
 }
-variable "client_id" {}
-variable "client_secret" {}
-variable "tenant_id" {}
-variable "subscription_id" {}
+variable "client_id" {
+  type      = string
+  sensitive = true
+}
+variable "client_secret" {
+  type      = string
+  sensitive = true
+}
+variable "tenant_id" {
+  type      = string
+  sensitive = true
+}
+variable "subscription_id" {
+  type      = string
+  sensitive = true
+}

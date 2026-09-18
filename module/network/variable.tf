@@ -14,11 +14,11 @@ variable "resource_group_name" {
   type = string
 }
 variable "address_space" {
-  type = set(string)
+  type = string
 }
 variable "public_subnet_cidr" {
-  type = set(string)
+  type = string
 }
 variable "private_subnet_cidr" {
-  type = set(string)
+  type = string
 }

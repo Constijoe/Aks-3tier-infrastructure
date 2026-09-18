@@ -6,7 +6,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = var.resource_group_name
 
 
-  address_space = var.address_space
+  address_space = [var.address_space]
   tags = {
     environment = "var.env"
   }
@@ -21,7 +21,7 @@ resource "azurerm_subnet" "public" {
   virtual_network_name = azurerm_virtual_network.vnet.name
 
 
-  address_prefixes = var.public_subnet_cidr
+  address_prefixes = [var.public_subnet_cidr]
 }
 
 
@@ -36,6 +36,6 @@ resource "azurerm_subnet" "private" {
 
   virtual_network_name = azurerm_virtual_network.vnet.name
 
-  address_prefixes = var.public_subnet_cidr
+  address_prefixes = [var.private_subnet_cidr]
 
 }
