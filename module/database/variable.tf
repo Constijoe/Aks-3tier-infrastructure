@@ -15,3 +15,4 @@ variable "private_subnet_id" {
 }
 variable "env" {
 }
+variable "resource_group_name" {}
