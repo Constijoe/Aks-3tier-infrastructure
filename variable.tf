@@ -40,5 +40,5 @@ variable "subscription_id" {
   sensitive = true
 }
 variable "aks_version" {
-  
+
 }
