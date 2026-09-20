@@ -14,7 +14,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "mysql" {
 
 resource "azurerm_mysql_flexible_server" "db" {
 
-  name                = "${var.env}-database"
+  name                = "${var.env}-MysqlDB"
   resource_group_name = var.resource_group_name
   location            = var.location
 
