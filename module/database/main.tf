@@ -1,6 +1,6 @@
 resource "azurerm_private_dns_zone" "mysql" {
   name                = "privatelink.mysql.database.azure.com"
-  resource_group_name = var.name
+  resource_group_name = var.resource_group_name
 }
 
 resource "azurerm_private_dns_zone_virtual_network_link" "mysql" {
@@ -8,12 +8,14 @@ resource "azurerm_private_dns_zone_virtual_network_link" "mysql" {
   private_dns_zone_id = azurerm_private_dns_zone.mysql.id
 
   virtual_network_id = var.vnet_id
+
+
 }
 
 resource "azurerm_mysql_flexible_server" "db" {
 
   name                = "${var.env}-database"
-  resource_group_name = var.name
+  resource_group_name = var.resource_group_name
   location            = var.location
 
   administrator_login    = var.db_username

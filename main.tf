@@ -10,9 +10,9 @@ module "network" {
   env                  = var.env
   virtual_network_name = var.virtual_network_name
 
-  resource_group_name = module.resource_group.resource_group_name
-  location            = module.resource_group.resource_group_location
-  address_space       = var.address_space
+  resource_group_name     = module.resource_group.resource_group_name
+  resource_group_location = module.resource_group.resource_group_location
+  address_space           = var.address_space
 
   public_subnet_cidr  = var.public_subnet_cidr
   private_subnet_cidr = var.private_subnet_cidr

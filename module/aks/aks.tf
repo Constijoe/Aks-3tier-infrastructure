@@ -1,8 +1,8 @@
 resource "azurerm_kubernetes_cluster" "aks" {
   name                      = "${var.env}-aks1"
   location                  = var.location
-  resource_group_name       = var.name
-  dns_prefix                = "exampleaks1"
+  resource_group_name       = var.resource_group_name
+  dns_prefix                = var.env
   kubernetes_version        = var.aks_version
   private_cluster_enabled   = false
   node_resource_group       = "PCIDSS-bank-AKS-nodes"
