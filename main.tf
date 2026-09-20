@@ -36,7 +36,7 @@ module "aks" {
   location            = module.resource_group.resource_group_location
   name                = var.name
   env                 = var.env
-  aks_version         = "1.33"
+  aks_version         = "1.35.7"
   vnet_id             = module.network.vnet_id
 
 
