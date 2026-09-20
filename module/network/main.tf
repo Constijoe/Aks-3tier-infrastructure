@@ -38,4 +38,14 @@ resource "azurerm_subnet" "private" {
 
   address_prefixes = [var.private_subnet_cidr]
 
+  delegation {
+    name = "mysql-flexible-server-delegation"
+
+    service_delegation {
+      name = "Microsoft.DBforMySQL/flexibleServers"
+      actions = [
+        "Microsoft.Network/virtualNetworks/subnets/join/action"
+      ]
+    }
+  }
 }
