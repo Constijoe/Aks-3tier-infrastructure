@@ -1,4 +1,4 @@
-name                 = "PCIDSS-bank-RG"
+name                 = "Constijoe-PCIDSS-bank-RG"
 location             = "Canada Central"
 env                  = "production"
 virtual_network_name = "PCIDSS_Vnet"
