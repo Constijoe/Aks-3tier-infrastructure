@@ -32,8 +32,8 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.API_TF_TOKEN }}
 
-    # - name: Terraform Init
-    #   run: terraform init
+    - name: Terraform Init
+      run: terraform init
 
     # - name: Terraform Format Check
     #   run: terraform fmt -check -recursive
