@@ -5,7 +5,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "example" {
   auto_scaling_enabled  = true
   node_count            = 2
   min_count             = 1
-  max_count             = 10
+  max_count             = 9
 
   tags = {
     Environment = var.env
