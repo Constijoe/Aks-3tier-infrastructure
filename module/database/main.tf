@@ -4,12 +4,10 @@ resource "azurerm_private_dns_zone" "mysql" {
 }
 
 resource "azurerm_private_dns_zone_virtual_network_link" "mysql" {
-  name                = "mysql-link"
-  private_dns_zone_id = azurerm_private_dns_zone.mysql.id
-
-  virtual_network_id = var.vnet_id
-
-
+  name                 = "mysql-link"
+  private_dns_zone_id  = azurerm_private_dns_zone.mysql.id
+  virtual_network_id   = var.vnet_id
+  registration_enabled = false
 }
 
 resource "azurerm_mysql_flexible_server" "db" {

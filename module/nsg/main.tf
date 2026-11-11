@@ -30,7 +30,7 @@ resource "azurerm_network_security_group" "database" {
 
 
 
-    source_port_range = "*"
+    source_port_range = "10.0.3.0/24"
 
 
     destination_port_range = "3360"

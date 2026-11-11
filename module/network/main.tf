@@ -28,7 +28,7 @@ resource "azurerm_subnet" "public" {
 
 resource "azurerm_subnet" "private" {
 
-  name = "${var.env}-subnet"
+  name = "${var.env}-privite"
 
 
   resource_group_name = var.resource_group_name
@@ -48,4 +48,16 @@ resource "azurerm_subnet" "private" {
       ]
     }
   }
+}
+
+resource "azurerm_subnet" "aks-subnet" {
+
+  name = "${var.env}-aks"
+
+  resource_group_name = var.resource_group_name
+
+  virtual_network_name = azurerm_virtual_network.vnet.name
+
+
+  address_prefixes = [var.aks_subnet_cidr]
 }

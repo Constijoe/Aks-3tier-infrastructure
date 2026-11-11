@@ -16,6 +16,7 @@ module "network" {
 
   public_subnet_cidr  = var.public_subnet_cidr
   private_subnet_cidr = var.private_subnet_cidr
+  aks_subnet_cidr     = var.aks_subnet_cidr
 
 }
 
@@ -38,6 +39,5 @@ module "aks" {
   env                 = var.env
   aks_version         = "1.35.7"
   vnet_id             = module.network.vnet_id
-
-
+  aks_subnet_id       = module.network.aks_subnet_id
 }

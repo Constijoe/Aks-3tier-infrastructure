@@ -12,13 +12,14 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   network_profile {
     network_plugin = "azure"
-    dns_service_ip = "10.0.5.10"
-    service_cidr   = "10.0.5.0/24"
+    dns_service_ip = "10.1.0.10"
+    service_cidr   = "10.1.0.0/24"
   }
   default_node_pool {
-    name       = "default"
-    node_count = 1
-    vm_size    = "Standard_D2_v3"
+    name           = "default"
+    node_count     = 1
+    vm_size        = "Standard_D2_v3"
+    vnet_subnet_id = var.aks_subnet_id
   }
   node_provisioning_profile {
     mode = "Manual"
