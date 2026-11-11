@@ -35,13 +35,13 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    # - name: Terraform Format Check
-    #   run: terraform fmt -check -recursive
+    - name: Terraform Format Check
+      run: terraform fmt -check -recursive
 
-    # - name: Terraform Plan
-    #   run: terraform plan
+    - name: Terraform Plan
+      run: terraform plan
 
-    # - name: terraform apply
-    #   run: terraform apply -auto-approve
-    - name: terraform Destroy
-      run: terraform destroy -auto-approve
+    - name: terraform apply
+      run: terraform apply -auto-approve
+    # - name: terraform Destroy
+    #   run: terraform destroy -auto-approve
